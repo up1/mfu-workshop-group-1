@@ -12,7 +12,6 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 @WebServlet("/sumup")
 public class CountMoneyServlet extends HttpServlet {
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -20,7 +19,7 @@ public class CountMoneyServlet extends HttpServlet {
         product product = new product();
         order order  =new  order();
         user user = new user();
-        tranhsaction tran = new tran();
+        transaction tran = new transaction();
 
         user.setId("1");
         user.setName("Giff");
@@ -29,21 +28,29 @@ public class CountMoneyServlet extends HttpServlet {
 
         product.setId("007");
         product.setName("CoCo");
-        product.setPrice("55");
+        product.setPrice(55.00f);
 
-        order.setDay();
-        order.setId();
-        order.setPrice();
-        order.setName();
-        order.setstatus();
-        order.setFee();
+        order.setDay("17/15/8");
+        order.setId("006");
+        order.setPrice(56.00f);
+        order.setName("shop");
+        order.setStatus("successfull");
+        order.setFee("1");
 
+        tran.setShopname("coppee");
+        tran.setPrice(55.00f);
+        tran.setId("1");
+        tran.setDaytran("17/8/25");
         ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(resp.getOutputStream(), user,product,order);
-
+        mapper.writeValue(resp.getOutputStream(), user);
+        mapper.writeValue(resp.getOutputStream(), product);
+        mapper.writeValue(resp.getOutputStream(), order);
     }
 
 }
+
+
+
 
 
 class user {
@@ -124,6 +131,15 @@ class order {
     private String  day;
     private String fee;
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    private String status;
     public String getFee() {
         return fee;
     }
@@ -132,15 +148,7 @@ class order {
         this.fee = fee;
     }
 
-    public String getOrder() {
-        return order;
-    }
 
-    public void setOrder(String order) {
-        this.order = order;
-    }
-
-    private String order;
     public String getId() {
         return id;
     }
