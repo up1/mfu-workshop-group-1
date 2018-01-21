@@ -1,0 +1,41 @@
+<html>
+        
+        <head>
+                <meta charset="UTF-8">    
+        <title>ยอดการชำระ</title>
+        </head>
+        <body>
+         <center> <form name="check" action="" method="POST" >
+        <h1>ยอดการชำระ</h1>
+                <p>รหัสสินค้า:</p>
+                <p>ชื่อสินค้า:</p>
+                <p>จำนวน:</p>
+                <p>ราคา:</p>
+                <p>รวมราคาสินค้า:</p>
+                <p>ค่าธรรมเนียม:</p>
+                <p>ยอดการชำระสินค้า:</p>
+        <br>
+        
+        <input type="submit" value="ยืนยัน" onclick="bill.html">
+        </center></form>
+        
+        
+        
+        
+          <script language="javascript">
+        
+        
+        
+        function checkSubmit(){
+        if (confirm('กรุณายืนยันการทำรายการ')){
+            return true;
+        }else{
+            alert('ไม่สามารถจ่ายเงินได้ เนื่องจ่ายเงินของท่านไม่พอสำหรับการชำระเงิน')
+            return false;
+        }
+        
+        
+          </script>  
+        </body>
+ 
+</html>
