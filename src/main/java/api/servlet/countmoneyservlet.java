@@ -20,19 +20,26 @@ public class CountMoneyServlet extends HttpServlet {
         product product = new product();
         order order  =new  order();
         user user = new user();
-
+        tranhsaction tran = new tran();
 
         user.setId("1");
         user.setName("Giff");
         user.setSurname("Sriti");
 
-        product.setName("CoCo");
 
         product.setId("007");
         product.setName("CoCo");
         product.setPrice("55");
+
+        order.setDay();
+        order.setId();
+        order.setPrice();
+        order.setName();
+        order.setstatus();
+        order.setFee();
+
         ObjectMapper mapper = new ObjectMapper();
-        mapper.writeValue(resp.getOutputStream(), user);
+        mapper.writeValue(resp.getOutputStream(), user,product,order);
 
     }
 
@@ -116,6 +123,24 @@ class order {
     private float price;
     private String  day;
     private String fee;
+
+    public String getFee() {
+        return fee;
+    }
+
+    public void setFee(String fee) {
+        this.fee = fee;
+    }
+
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
+
+    private String order;
     public String getId() {
         return id;
     }
@@ -146,6 +171,45 @@ class order {
 
     public void setDay(String day) {
         this.day = day;
+    }
+}
+
+class transaction{
+    private String id;
+    private String shopname;
+    private float price;
+    private String daytran;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getShopname() {
+        return shopname;
+    }
+
+    public void setShopname(String shopname) {
+        this.shopname = shopname;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public String getDaytran() {
+        return daytran;
+    }
+
+    public void setDaytran(String daytran) {
+        this.daytran = daytran;
     }
 }
 
