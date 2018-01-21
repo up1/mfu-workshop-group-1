@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.codehaus.jackson.map.ObjectMapper;
 
 @WebServlet("/sumup")
-public class CountMoneyServlet extends HttpServlet {
+public class CountMoneyServlet2 extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
